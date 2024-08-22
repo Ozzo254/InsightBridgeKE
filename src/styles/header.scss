@@ -1,0 +1,123 @@
+nav {
+  width: 100%;
+  height: 100px;
+  background-color: $color2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 $p;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  > h1 {
+    font-size: 2rem;
+    cursor: -moz-grabbing;
+  }
+  > div {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    a {
+      color: $color6;
+      font-weight: 600;
+      letter-spacing: 1px;
+      transition: all 0.35s;
+      &:hover {
+        color: $color1;
+      }
+      &:active {
+        border-bottom: 3px solid $color2;
+      }
+    }
+  }
+  > a > button {
+    border: 2px solid $color2;
+    padding: $p_navBtn;
+    background-color: $color1;
+    cursor: pointer;
+    color: $color6;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+    &:hover {
+      border: 1px solid $hcolor;
+      color: $hcolor;
+      background-color: $color6;
+    }
+  }
+}
+
+.navPhone {
+  width: 100%;
+  height: 100vh;
+  background-color: $color3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-self: center;
+  padding: $p_base;
+  position: fixed;
+  top: 0;
+  gap: 3rem;
+  z-index: 100;
+  transform: translateY(-200%);
+  transition: all 0.5s;
+  > h1 {
+    font-size: 2.2rem;
+    color: $color4;
+    border-bottom: 2px solid $color4;
+    border-top: 2px solid $color4;
+    padding-bottom: 0.7rem;
+    padding-top: 0.6rem;
+  }
+  > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.8rem;
+    a {
+      color: $color4;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      transition: all 0.3s;
+      &:hover {
+        color: $hcolor;
+      }
+    }
+  }
+  > a > button {
+    border: 1px solid $color2;
+    padding: $p_navBtn;
+    font-weight: 900;
+    font-size: 0.9rem;
+    background-color: $color4;
+    letter-spacing: 1.5px;
+    color: $color6;
+    transition: all 0.3s;
+    &:hover {
+      border: 2px solid $hcolor;
+      color: $hcolor;
+      background-color: $color6_1;
+    }
+  }
+}
+.navBtn {
+  width: 40px;
+  height: 40px;
+  color: $color4;
+  position: absolute;
+  top: 2rem;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 1.5rem;
+  z-index: 101;
+  right: 2rem;
+  display: none;
+  &:hover {
+    color: $hcolor;
+  }
+}
+
+.menuOpen {
+  transform: translateY(0);
+}
