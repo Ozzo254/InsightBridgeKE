@@ -2,6 +2,8 @@
 
 @import "static";
 @import "header";
+@import "hero";
+
 * {
   padding: 0;
   margin: 0;
@@ -14,7 +16,7 @@ a {
 }
 
 body {
-  background-color: $color1;
+  background-color: $color6;
   overflow-x: hidden;
 }
 
