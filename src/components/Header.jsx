@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
+import TriangularButton from "./TriangularButton";
 const Header = ({ menuOpen, setMenuOpen }) => {
   return (
     <>
@@ -51,9 +52,10 @@ const NavContent = ({ setMenuOpen }) => {
           Contact
         </a>
       </div>
-      <a onClick={clickHandler} href="/form">
+      {/*  <a onClick={clickHandler} href="/form">
         <button>Get a Quote</button>
-      </a>
+      </a> */}
+      <TriangularButton href={"/form"} />
     </>
   );
 };
