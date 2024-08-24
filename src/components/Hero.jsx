@@ -26,15 +26,15 @@ const Section = ({ scrollYProgress }) => {
 
   const animations = {
     h2: {
-      initial: { opacity: 0.1 },
+      initial: { opacity: 0 },
       whileInView: { opacity: 1 },
     },
   };
 
   return (
     <motion.section style={{ rotate, scale }} className="hero">
-      <div className="hero-overlay">
-        <motion.h2 {...animations.h2} className="h2">
+      <div className="heroOverlay">
+        <motion.h2 style={{ ...animations.h2 }} className="h2">
           Innovate Boldly, <br />
           Secure Confidently
         </motion.h2>
@@ -53,6 +53,33 @@ const Section = ({ scrollYProgress }) => {
             wrapperClassName: "typewriterpara",
           }}
         />
+      </div>
+      <div className="consultancy-section">
+        <h2>Why Choose IBK</h2>
+        <p className="consultancy-paragraph">
+          In today&#39;s fast-paced and competitive business landscape, having a
+          strong, cohesive brand presence, a robust digital infrastructure, and
+          effective HR management is not just advantageous—it&#39;s essential
+          for any business&#39; survival and growth. Our consultancy firm
+          provides comprehensive services spanning branding and marketing, web
+          design and development, HR management, data collection, and
+          cybersecurity, ensuring that every facet of your business is optimized
+          for success.
+        </p>
+        <p className="consultancy-paragraph">
+          By partnering with us, you gain access to a multidisciplinary team of
+          experts who deliver tailored solutions designed to enhance your brand
+          visibility, secure your data, streamline your operations, and attract
+          top talent. Unlike other firms, we offer a holistic approach that
+          integrates these critical areas, ensuring that your business not only
+          keeps up with market demands but also leads the way in innovation and
+          efficiency.
+        </p>
+        <p className="consultancy-paragraph">
+          Keeping our focus on quality, security, and strategic growth, we
+          empower your business to thrive in an increasingly complex digital
+          economy.
+        </p>
       </div>
     </motion.section>
   );

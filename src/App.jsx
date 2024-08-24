@@ -8,6 +8,7 @@ import Hero from "./components/Hero";
 
 import Form from "./pages/Form";
 import Home from "./pages/Home";
+import Services from "./components/Services";
 
 const App = () => {
   useEffect(() => {
@@ -29,6 +30,7 @@ const App = () => {
         <HeaderPhone menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
         <Header menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
         <Hero />
+        <Services />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/form" element={<Form />} />
