@@ -31,18 +31,35 @@ nav {
       }
     }
   }
-  > a > button {
-    border: 2px solid $color2;
-    padding: $p_navBtn;
-    background-color: $color1;
+  // > a > button {
+  //   border: 2px solid $color2;
+  //   padding: $p_navBtn;
+  //   background-color: $color1;
+  //   cursor: pointer;
+  //   color: $color6;
+  //   letter-spacing: 1.5px;
+  //   font-weight: 600;
+  //   &:hover {
+  //     border: 1px solid $hcolor;
+  //     color: $hcolor;
+  //     background-color: $color6;
+  //   }
+  // }
+  .navBtn {
+    width: 40px;
+    height: 40px;
+    color: $color4;
+    position: absolute;
+    top: 2rem;
+    border: none;
+    background-color: transparent;
     cursor: pointer;
-    color: $color6;
-    letter-spacing: 1.5px;
-    font-weight: 600;
+    font-size: 1.5rem;
+    z-index: 101;
+    right: 2rem;
+    display: none;
     &:hover {
-      border: 1px solid $hcolor;
       color: $hcolor;
-      background-color: $color6;
     }
   }
 }
@@ -101,24 +118,19 @@ nav {
     }
   }
 }
-.navBtn {
-  width: 40px;
-  height: 40px;
-  color: $color4;
-  position: absolute;
-  top: 2rem;
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
-  font-size: 1.5rem;
-  z-index: 101;
-  right: 2rem;
-  display: none;
-  &:hover {
-    color: $hcolor;
-  }
-}
 
 .menuOpen {
   transform: translateY(0);
+}
+
+@media (max-width: 1076px) {
+  nav > div:not(.triBtn) {
+    display: none;
+    .triBtn {
+      right: 5rem;
+    }
+  }
+  .navBtn {
+    display: block;
+  }
 }

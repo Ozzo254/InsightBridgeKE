@@ -7,7 +7,6 @@ import Header, { HeaderPhone } from "./components/Header";
 import Hero from "./components/Hero";
 
 import Form from "./pages/Form";
-import Home from "./pages/Home";
 import Services from "./components/Services";
 
 const App = () => {
@@ -25,18 +24,16 @@ const App = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <>
-      <Router>
-        <HeaderPhone menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-        <Header menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-        <Hero />
-        <Services />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/form" element={<Form />} />
-        </Routes>
-      </Router>
-    </>
+    <Router>
+      <HeaderPhone menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+      <Header menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+      <Hero />
+      <Services />
+
+      <Routes>
+        <Route path="form" element={<Form />} />
+      </Routes>
+    </Router>
   );
 };
 

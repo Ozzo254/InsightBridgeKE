@@ -6,11 +6,10 @@ const Header = ({ menuOpen, setMenuOpen }) => {
     <>
       <nav>
         <NavContent setMenuOpen={setMenuOpen} />
+        <button className="navBtn" onClick={() => setMenuOpen(!menuOpen)}>
+          {!menuOpen ? <AiOutlineMenu /> : <AiOutlineClose />}
+        </button>
       </nav>
-
-      <button className="navBtn" onClick={() => setMenuOpen(!menuOpen)}>
-        {!menuOpen ? <AiOutlineMenu /> : <AiOutlineClose />}
-      </button>
     </>
   );
 };
@@ -55,7 +54,9 @@ const NavContent = ({ setMenuOpen }) => {
       {/*  <a onClick={clickHandler} href="/form">
         <button>Get a Quote</button>
       </a> */}
-      <TriangularButton href={"/form"} />
+      <div className="triBtn">
+        <TriangularButton href={"/form"} />
+      </div>
     </>
   );
 };
