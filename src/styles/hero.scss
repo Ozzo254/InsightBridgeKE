@@ -155,6 +155,7 @@
       box-shadow: 0 4px 18px 3px $color2;
       max-width: 800px;
       margin: 4px auto;
+      z-index: 0;
 
       > h2 {
         color: $color3;
