@@ -4,12 +4,11 @@ import TriangularButton from "./TriangularButton";
 const Header = ({ menuOpen, setMenuOpen }) => {
   return (
     <>
-      <nav>
-        <NavContent setMenuOpen={setMenuOpen} />
-        <button className="navBtn" onClick={() => setMenuOpen(!menuOpen)}>
-          {!menuOpen ? <AiOutlineMenu /> : <AiOutlineClose />}
-        </button>
-      </nav>
+      {!menuOpen && (
+        <nav>
+          <NavContent setMenuOpen={setMenuOpen} />
+        </nav>
+      )}
     </>
   );
 };
@@ -23,13 +22,13 @@ export const HeaderPhone = ({ menuOpen, setMenuOpen }) => {
     </>
   );
 };
-const NavContent = ({ setMenuOpen }) => {
+const NavContent = ({ menuOpen, setMenuOpen }) => {
   const clickHandler = () => setMenuOpen(false);
   return (
     <>
       <h1>Insight Bridge KE</h1>
       <div>
-        <a onClick={clickHandler} href="#home">
+        <a onClick={clickHandler} href="/">
           Home
         </a>
         <a onClick={clickHandler} href="#services">
@@ -41,13 +40,13 @@ const NavContent = ({ setMenuOpen }) => {
         <a onClick={clickHandler} href="#team">
           Team
         </a>
-        <a onClick={clickHandler} href="#blog">
+        <a onClick={clickHandler} href="/blogs">
           Blog
         </a>
         <a onClick={clickHandler} href="#testimonials">
           Testimonials
         </a>
-        <a onClick={clickHandler} href="#contact">
+        <a onClick={clickHandler} href="/contact">
           Contact
         </a>
       </div>
@@ -57,19 +56,23 @@ const NavContent = ({ setMenuOpen }) => {
       <div className="triBtn">
         <TriangularButton href={"/form"} />
       </div>
+      <button className="navBtn" onClick={() => setMenuOpen(!menuOpen)}>
+        {!menuOpen ? <AiOutlineMenu /> : <AiOutlineClose />}
+      </button>
     </>
   );
 };
 
 Header.propTypes = {
-  menuOpen: PropTypes.bool,
+  menuOpen: PropTypes.bool.isRequired,
   setMenuOpen: PropTypes.func,
 };
 HeaderPhone.propTypes = {
-  menuOpen: PropTypes.bool,
+  menuOpen: PropTypes.bool.isRequired,
   setMenuOpen: PropTypes.func,
 };
 NavContent.propTypes = {
+  menuOpen: PropTypes.bool.isRequired,
   setMenuOpen: PropTypes.func,
 };
 

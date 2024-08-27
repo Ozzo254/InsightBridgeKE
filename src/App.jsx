@@ -8,6 +8,8 @@ import Hero from "./components/Hero";
 
 import Form from "./pages/Form";
 import Services from "./components/Services";
+import Blogs from "./pages/Blogs";
+import Contact from "./pages/Contact";
 
 const App = () => {
   useEffect(() => {
@@ -27,14 +29,25 @@ const App = () => {
     <Router>
       <HeaderPhone menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
       <Header menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-      <Hero />
-      <Services />
 
       <Routes>
+        <Route exact path="/" element={<Home />} />
         <Route path="form" element={<Form />} />
+        <Route path="blogs" element={<Blogs />} />
+        <Route path="contact" element={<Contact />} />
       </Routes>
     </Router>
   );
 };
+function Home() {
+  return (
+    <>
+      <Hero />
+      <Services />
+      <Blogs />
+      <Contact />
+    </>
+  );
+}
 
 export default App;
